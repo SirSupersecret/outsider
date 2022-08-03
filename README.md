@@ -7,7 +7,7 @@ The only reliable way to do this, from what I know, is by requiring to sign a pr
 The existence of such a sinature can thus proof an account to be externally owned.
 
 ## How it works
-Users proof their accounts to be externally owned by signing '0xe171a8671c07fc3c8903fd80085d685735c5343be5eb544bec23614c63e0dc3a', the keccak256 of the message `I am worthy.`.
+Users proof their accounts to be externally owned by signing `0xe171a8671c07fc3c8903fd80085d685735c5343be5eb544bec23614c63e0dc3a`, the keccak256 of the message `I am worthy.`.
 This signature, in combination with its corresponding address, is submitted to the outsider protocol, which verifies the signature and remembers the address as an EOA.
 Any smart contract can then query this data by calling `isEAO(<address>)`.
 
@@ -28,7 +28,8 @@ The message to sign is predetermined to block one-time-use EOAs.
 The OpenZeppelin library is used to ensure security.
 
 ### Dev Notes:
-Clear artifacts before verifying using:
+Clear artifacts first, then verify using:
+
 `npx hardhat verify --network <network> 0xf074B8600EcF65FaDbb33f75026A3a479257C34D`
 
 Also make sure deployment works first try on other networks to keep the address the same.

@@ -13,7 +13,7 @@ Any smart contract can then query this data by calling `isEAO(<address>)`.
 
 
 ## Considerations
-This contract is located at `0xf074B8600EcF65FaDbb33f75026A3a479257C34D` on the following chains: Polygon Mumbai, Goerli
+This contract is located at `0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562` on the following chains: Polygon Mumbai, Goerli
 
 While it is easiest for the end user if a dApp automatically performs this registration process, there is a frontend to register manually.
 
@@ -30,6 +30,4 @@ The OpenZeppelin library is used to ensure security.
 ### Dev Notes:
 Clear artifacts first, then verify using:
 
-`npx hardhat verify --network <network> 0xf074B8600EcF65FaDbb33f75026A3a479257C34D`
-
-Also make sure deployment works first try on other networks to keep the address the same.
+`npx hardhat verify --network <network> 0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562`

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outsider</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="application/javascript" src="ethers-5.6.umd.min.js"></script>
+    <script type="application/javascript"  src="logic.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div class="interactable" x-data="interactive" x-bind:class="state">
+        <button x-bind:disabled="progress == 0 && state != 'true' ? false : true" @click="connect()">Connect</button>
+        <button x-bind:disabled="progress == 1 && state != 'true' ? false : true" @click="sign()">Sign</button>
+        <button x-bind:disabled="progress == 2 && state != 'true' ? false : true" @click="submit()">Submit</button>
+    </div>
+</body>
+</html>

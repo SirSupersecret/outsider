@@ -1,0 +1,19 @@
+.unknown {
+    background-color: grey;
+}
+
+.true {
+    background-color: green;
+}
+
+.false {
+    background-color: red;
+}
+
+.unsupported {
+    background-color: blueviolet;
+}
+
+.waiting {
+    background-color: orange;
+}

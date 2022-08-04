@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 contract Outsider {
     using ECDSA for bytes32;
 
-    event ProofOfEOA(address subject);
+    event ProofOfEOA(address indexed subject);
 
     /// @dev Using this seems to be around 1500 gas more expensive than recovering an address.
     mapping(address => bool) public isEOA;

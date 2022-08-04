@@ -1,18 +1,28 @@
-const provider = new ethers.providers.Web3Provider(window.ethereum)
+let provider;
 const outsiderABI = [
   "function isEOA(address) view returns (bool)",
   "function proofEOA(address _subject, bytes _sig)",
   "event ProofOfEOA(address subject)"
 ]
-const outsiderContract = new ethers.Contract("0xf074B8600EcF65FaDbb33f75026A3a479257C34D", outsiderABI, provider);
+let outsiderContract;
 
 let signer;
 let sig;
 
 document.addEventListener('alpine:init', () => {
+  let initialState = "unknown";
+  let initialProgress = 0;
+  try {
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    outsiderContract = new ethers.Contract("0xf074B8600EcF65FaDbb33f75026A3a479257C34D", outsiderABI, provider);
+  } catch (e) {
+    initialState = "unsupported";
+    initialProgress = 3;
+  }
+
   Alpine.data('interactive', () => ({
-    progress: 0,
-    state: "unknown",
+    progress: initialProgress,
+    state: initialState,
     readable: "Connect your wallet to check your EOA status.",
 
     setStates(newVal) {

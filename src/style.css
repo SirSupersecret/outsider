@@ -58,6 +58,14 @@ body {
     background-color: rgb(236, 236, 236);
 }
 
+.button:hover {
+    background-color: rgb(206, 206, 206);
+}
+
+.button:active {
+    background-color: rgb(185, 185, 185);
+}
+
 .button:disabled {
     color: gray;
     background-color: rgba(236, 236, 236, 0.548);
@@ -119,4 +127,8 @@ header a {
 
 .address {
     font-size: min(1rem, 3vw);
+}
+
+h1 {
+    font-size: 1.7rem;
 }

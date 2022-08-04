@@ -1,19 +1,90 @@
+body {
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.interactable {
+    transition-duration: 400ms;
+    margin: auto;
+    width: min(90%, 35rem);
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.interactable div {
+    margin: auto;
+    width: min(70%, 35rem);
+    padding: 0.5rem 0;
+}
+
+.interactable div a {
+    font-weight: bold;
+    font-size: 1.7rem;
+    vertical-align:middle;
+}
+
+.status {
+    padding-bottom: 1rem;
+}
+
 .unknown {
-    background-color: grey;
+    background-color: rgb(208, 227, 255);
 }
 
 .true {
-    background-color: green;
+    background-color: rgb(221, 255, 221);
 }
 
 .false {
-    background-color: red;
+    background-color: rgb(254, 214, 214);
 }
 
 .unsupported {
-    background-color: blueviolet;
+    background-color: rgb(234, 214, 253);
 }
 
 .waiting {
-    background-color: orange;
+    background-color: rgb(255, 249, 205);
+}
+
+.button {
+    padding: 0.5rem 28%;
+}
+
+.navbar {
+    padding: 0.35rem 0rem 0.7rem 0rem;
+    /* border: 1px solid black; */
+    /* border-radius: 0.25rem; */
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+}
+
+.footer {
+    padding: 0.7rem 0rem 0rem 0rem;
+    margin-top: 1.5rem;
+    /* border: 1px solid black; */
+    /* border-radius: 0.25rem; */
+    text-align: center;
+    border-top: 1px solid black;
+    /* margin: 0 0rem 1rem 0rem; */
+}
+
+.footer img {
+    width: 2.5rem;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.text {
+    margin: auto;
+    width: min(80%, 70rem);
+    padding: 0.3rem;
+}
+h1 {
 }

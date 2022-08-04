@@ -13,12 +13,30 @@ document.addEventListener('alpine:init', () => {
   Alpine.data('interactive', () => ({
     progress: 0,
     state: "unknown",
+    readable: "Connect your wallet to check your EOA status.",
+
+    setStates(newVal) {
+      this.state = newVal;
+
+      switch(newVal) {
+        case "true":
+          this.readable = "This account is registered as EOA.";
+          break;
+        case "false":
+          this.readable = "This account is not registered as EOA";
+          break;
+        case "unsupported":
+          this.readable = "Outsider does not yet support this chain.";
+          break;
+        case "waiting":
+          this.readable = "Your request is currently processed."
+          break;
+      }
+    },
 
     async connect() {
       await provider.send("eth_requestAccounts", []);
       signer = await provider.getSigner();
-
-      
 
       if(signer) {
         let isEOA;
@@ -26,16 +44,16 @@ document.addEventListener('alpine:init', () => {
           isEOA = await outsiderContract.isEOA(await signer.getAddress());
         } catch(e) {
           alert("Outsider is not yet deployed on this chain.");
-          this.state = "unsupported";
+          this.setStates("unsupported");
           this.progress = 3;
           return;
         }
 
         if(isEOA) {
-          this.state = "true"
+          this.setStates("true");
           this.progress = 2;
         } else {
-          this.state = "false"
+          this.setStates("false");
           this.progress = 1;
         }
       }
@@ -62,9 +80,9 @@ document.addEventListener('alpine:init', () => {
       try {
         const tx = await outsiderWithSigner.proofEOA(await signer.getAddress(), sig);
         console.log(tx.hash)
-        this.state = "waiting";
+        this.setStates("waiting");
         const receipt = await tx.wait();
-        this.state = "true";
+        this.setStates("true");
         console.log(receipt)
       } catch (e) {
         console.log(e)

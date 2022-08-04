@@ -30,16 +30,16 @@ document.addEventListener('alpine:init', () => {
 
       switch(newVal) {
         case "true":
-          this.readable = "This account is registered as EOA.";
+          this.readable = "This account is registered as an EOA.";
           break;
         case "false":
-          this.readable = "This account is not registered as EOA";
+          this.readable = "This account is not registered as an EOA";
           break;
         case "unsupported":
           this.readable = "Outsider does not yet support this chain.";
           break;
         case "waiting":
-          this.readable = "Your request is currently processed."
+          this.readable = "Your request is currently being processed."
           break;
       }
     },

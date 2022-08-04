@@ -20,7 +20,7 @@ body {
     padding: 0.5rem 0;
 }
 
-.interactable div a {
+.interactable div .number {
     font-weight: bold;
     font-size: 1.7rem;
     vertical-align:middle;
@@ -52,6 +52,15 @@ body {
 
 .button {
     padding: 0.5rem 28%;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    color: black;
+    background-color: rgb(236, 236, 236);
+}
+
+.button:disabled {
+    color: gray;
+    background-color: rgba(236, 236, 236, 0.548);
 }
 
 .navbar {
@@ -59,7 +68,27 @@ body {
     text-align: center;
     border-bottom: 1px solid black;
     margin-bottom: 2.5rem;
-    font-size: 2rem;
+    font-size: min(2rem, 5vw);
+}
+
+.navbar span {
+    margin-left: min(2rem, 5vw);
+}
+
+.imgBox {
+    display: grid;
+    height: 100%;
+}
+
+.navbar img {
+    max-width: 10%;
+    max-height: 100vh;
+    margin: auto;
+}
+
+header a {
+    text-decoration: none;
+    color: black;    
 }
 
 .navbar img {
@@ -75,7 +104,7 @@ body {
 }
 
 .footer img {
-    width: 2.5rem;
+    width: 2rem;
 }
 
 .footer a {
@@ -86,4 +115,8 @@ body {
     margin: auto;
     width: min(80%, 70rem);
     padding: 0.3rem;
+}
+
+.address {
+    font-size: min(1rem, 3vw);
 }

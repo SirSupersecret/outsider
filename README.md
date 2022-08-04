@@ -7,7 +7,7 @@ The only reliable way to do this, from what I know, is by requiring to sign a pr
 The existence of such a sinature can thus proof an account to be externally owned.
 
 ## How it works
-Users proof their accounts to be externally owned by signing `0xe171a8671c07fc3c8903fd80085d685735c5343be5eb544bec23614c63e0dc3a`, the keccak256 of the message `I am worthy.`.
+Users proof their accounts to be externally owned by signing `0xe171a8671c07fc3c8903fd80085d685735c5343be5eb544bec23614c63e0dc3a`, the keccak256 of the message `I am worthy.` (Note: When using ethers this hash needs to be arrayified first, I haven't tested web3.js).
 This signature, in combination with its corresponding address, is submitted to the outsider protocol, which verifies the signature and remembers the address as an EOA.
 Any smart contract can then query this data by calling `isEAO(<address>)`.
 

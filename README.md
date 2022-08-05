@@ -23,7 +23,7 @@ contract <YourContract> {
         ...
     }
 
-    // register as EOA, to combine with your registration code (in case there is)
+    // register as EOA, to combine with own registration logic (in case there is any)
     function yourRegistrationFunction(bytes memory _sig) public {
         proofEOA(msg.sender, _sig);
         ...

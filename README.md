@@ -54,6 +54,11 @@ The OpenZeppelin library is used to ensure security.
 
 If you have any questions, shoot me a DM on [Twitter](https://twitter.com/SirSupersecret).
 
+If you want to see this contract on more chains (located at the same address), feel free to send some network native tokens to:
+0x07aCb828Cbe003C4D0CE9746BDdd4dB64799c0e3
+
+Also this contract is not audited (might be a good idea, but out of my reach).
+
 ### Dev Notes:
 Verify using (might need to clear artifacts):
 

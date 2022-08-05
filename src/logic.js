@@ -14,7 +14,7 @@ document.addEventListener('alpine:init', () => {
   let initialProgress = 0;
   try {
     provider = new ethers.providers.Web3Provider(window.ethereum);
-    outsiderContract = new ethers.Contract("0xf074B8600EcF65FaDbb33f75026A3a479257C34D", outsiderABI, provider);
+    outsiderContract = new ethers.Contract("0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562", outsiderABI, provider);
   } catch (e) {
     initialState = "unsupported";
     initialProgress = 3;

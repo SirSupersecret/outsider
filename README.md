@@ -15,7 +15,7 @@ abstract contract IOutsider {
 }
 
 contract <YourContract> {
-    IOutsider outsider = IOutsider(0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562);
+    IOutsider outsider = IOutsider(0x26369066fD98B0505971ae3f6d11E35352b34FcD);
 
     // check for EOA
     function yourFunction() public {
@@ -38,7 +38,7 @@ Any smart contract can then query this data by calling `isEAO(<address>)`.
 
 
 ## Considerations
-This contract is located at `0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562` on the following chains: Polygon Mumbai, Goerli
+This contract is located at `0x26369066fD98B0505971ae3f6d11E35352b34FcD` on the following chains: Polygon Mumbai, Goerli
 
 While it is easiest for the end user if a dApp automatically performs this registration process, there is a frontend to register manually.
 
@@ -53,6 +53,8 @@ The message to sign is predetermined to block one-time-use EOAs.
 The OpenZeppelin library is used to ensure security.
 
 ### Dev Notes:
-Clear artifacts first, then verify using:
+Verify using (might need to clear artifacts):
 
-`npx hardhat verify --network <network> 0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562`
+`npx hardhat verify --network <network> 0x26369066fD98B0505971ae3f6d11E35352b34FcD`
+
+Reminder to self: Test deploying to a new network with a separate account to prevent mistakes...

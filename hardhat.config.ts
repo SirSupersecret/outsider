@@ -8,7 +8,15 @@ import "hardhat-abi-exporter";
 dotenv.config();
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.9",
+  solidity: {
+    version: "0.8.9",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      }
+    }
+  },
   networks: {
     mumbai: {
       url: process.env.MUMBAI_URL || "",

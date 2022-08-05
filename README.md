@@ -15,7 +15,7 @@ abstract contract IOutsider {
 }
 
 contract <YourContract> {
-    IOutsider outsider = IOutsider(0x26369066fD98B0505971ae3f6d11E35352b34FcD);
+    IOutsider outsider = IOutsider(0x0a1a6f16febF97417888dbdf1CbC3b30BD0B5b81);
 
     // check for EOA
     function yourFunction() public {
@@ -38,7 +38,7 @@ Any smart contract can then query this data by calling `isEAO(<address>)`.
 
 
 ## Considerations
-This contract is located at `0x26369066fD98B0505971ae3f6d11E35352b34FcD` on the following chains: Polygon Mumbai, Goerli
+This contract is located at `0x0a1a6f16febF97417888dbdf1CbC3b30BD0B5b81` on the following chains: Polygon Mumbai, Goerli
 
 While it is easiest for the end user if a dApp automatically performs this registration process, there is a frontend to register manually.
 
@@ -62,6 +62,6 @@ Also this contract is not audited (might be a good idea, but out of my reach).
 ### Dev Notes:
 Verify using (might need to clear artifacts):
 
-`npx hardhat verify --network <network> 0x26369066fD98B0505971ae3f6d11E35352b34FcD`
+`npx hardhat verify --network <network> 0x0a1a6f16febF97417888dbdf1CbC3b30BD0B5b81`
 
 Reminder to self: Test deploying to a new network with a separate account to prevent mistakes...

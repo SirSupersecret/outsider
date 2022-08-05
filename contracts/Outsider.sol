@@ -13,7 +13,7 @@ contract Outsider {
 
     /// @notice Proof being an EOA once, then remember that on chain
     /// @dev Uses openzeppelin ECDSA.sol to increase the security of this implementation
-    function proofEOA(address _subject, bytes memory _sig) public {
+    function proofEOA(address _subject, bytes memory _sig) external {
         bytes32 messageHash = 0xe171a8671c07fc3c8903fd80085d685735c5343be5eb544bec23614c63e0dc3a;
         // =
         /*

@@ -6,6 +6,31 @@ Especially with the introduction of SBTs (soulbound tokens) it might be necessar
 The only reliable way to do this, from what I know, is by requiring to sign a predetermined message. 
 The existence of such a sinature can thus proof an account to be externally owned.
 
+## Usage
+In your smart contract, you can use something akin to the following:
+```
+abstract contract IOutsider {
+    mapping(address => bool) public isEOA;
+    function proofEOA(address _subject, bytes memory _sig) public virtual;
+}
+
+contract <YourContract> {
+    IOutsider outsider = IOutsider(0xEe024D6AA9f4bFD1a62d4798f2e0314c33592562);
+
+    // check for EOA
+    function yourFunction() public {
+        require(outsider.isEOA(msg.sender));
+        ...
+    }
+
+    // register as EOA, to combine with your registration code (in case there is)
+    function yourRegistrationFunction(bytes memory _sig) public {
+        proofEOA(msg.sender, _sig);
+        ...
+    }
+}
+```
+
 ## How it works
 Users proof their accounts to be externally owned by signing `0xe171a8671c07fc3c8903fd80085d685735c5343be5eb544bec23614c63e0dc3a`, the keccak256 of the message `I am worthy.` (Note: When using ethers this hash needs to be arrayified first, I haven't tested web3.js).
 This signature, in combination with its corresponding address, is submitted to the outsider protocol, which verifies the signature and remembers the address as an EOA.

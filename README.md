@@ -38,7 +38,12 @@ Any smart contract can then query this data by calling `isEAO(<address>)`.
 
 
 ## Considerations
-This contract is located at `0x0a1a6f16febF97417888dbdf1CbC3b30BD0B5b81` on the following chains: Polygon Mumbai, Goerli
+This contract is located at `0x0a1a6f16febF97417888dbdf1CbC3b30BD0B5b81` on the following chains: 
+
+| Mainnet | Testnet |
+| ------- | ------- |
+| Polygon | Mumbai  |
+|         | Goerli  |
 
 While it is easiest for the end user if a dApp automatically performs this registration process, there is a frontend to register manually.
 
